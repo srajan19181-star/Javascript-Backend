@@ -10,8 +10,16 @@ dotenv.config({
 })
 
 
-
-connectDB( )
+//app.use used in middlewares
+connectDB()
+.then(()=>{
+    app.listen(process.env.PORT || 3000,()=> {
+        console.log(`server is running on port ${process.env.PORT || 3000}`)
+    })
+})
+.catch(error => {
+    console.log("Mongo DB connection error",error)
+}
 
 
 
@@ -36,4 +44,4 @@ const app = express()
         throw error
     }
 })()
-*/
+*/)
