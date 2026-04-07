@@ -41,4 +41,4 @@ const videoSchema = new mongoose.Schema({
 
 },{timestamps:true})
 
-export const video = mongoose.Model("video",videoSchema)
+export const video = mongoose.model("video",videoSchema)
